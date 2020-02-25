@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Quiz Refonte</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="styles.css">
-	<script>
-		function evaluateQuestion() {
-			var points =0;
-			var radios = document.getElementsByName('antwort10');
-			for (var i = 0, length = radios.length; i < length; i++) {
-				if (radios[i].checked) {
-					if(radios[i].value == 1){
-						points++;
+	<head>
+		<title>Quiz Refonte</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="styles.css">
+		<script>
+			function evaluateQuestion() {
+				var points =0;
+				var radios = document.getElementsByName('antwort10');
+				for (var i = 0, length = radios.length; i < length; i++) {
+					if (radios[i].checked) {
+						if(radios[i].value == 1){
+							points++;
+						}
 					}
 				}
-			}
-			var nextPage = './q2.html?p='+points
-			window.open(nextPage,'_self')
-		}
-	</script>
 
-</head>
+				var x = document.getElementById("question1");
+				if (x.style.display === "none") {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+				var y = document.getElementById("question2");
+				if (y.style.display === "none") {
+					y.style.display = "block";
+				} else {
+					y.style.display = "none";
+				}
+			}
+		</script>
+	</head>
 <body>
 
 <nav class="navbar navbar-inverse">
@@ -49,9 +59,11 @@
 	</div>
 </nav>
 
+
+<div id="question1" style="display: block">
 <h2> 1. Question </h2>
 What is the name of the capital of Switzerland?   <br>
-<form name="question1">
+<form  name="question1">
 	<INPUT TYPE="RADIO" NAME="antwort10" VALUE="0"> Genf        <br>
 	<INPUT TYPE="RADIO" NAME="antwort10" VALUE="0"> Z&uumlrich   <br>
 	<INPUT TYPE="RADIO" NAME="antwort10" VALUE="0"> Basel       <br>
@@ -61,8 +73,66 @@ What is the name of the capital of Switzerland?   <br>
 	<input type="button" VALUE="next"
 		   onclick="evaluateQuestion();">
 </form>
+</div>
+<div id="question2" style="display: none" >
+	<h2> 2. Question </h2>
+	What is the name of the biggest city in Switzerland?   <br>
+<form name="question2">
+	<INPUT TYPE="RADIO" NAME="antwort20" VALUE="0"> Lausanne        <br>
+	<INPUT TYPE="RADIO" NAME="antwort20" VALUE="1"> Z&uumlrich   <br>
+	<INPUT TYPE="RADIO" NAME="antwort20" VALUE="0"> Genf       <br>
+	<INPUT TYPE="RADIO" NAME="antwort20" VALUE="0"> Basel      <br>
+	<INPUT TYPE="RADIO" NAME="antwort20" VALUE="0"> Bern        <br>
+	</B>
+	<input type="button" VALUE="next"
+		   onclick="evaluateQuestion();">
+</form>
+</div>
+<div id="question3" style="display: none" >
+<h2> 3. Question </h2>
+Who became a national hero out of a work by the German poet Schiller?     <br>
+<form name="question3">
+	<INPUT TYPE="RADIO" NAME="antwort30" VALUE="0"> Adolf Ogi        <br>
+	<INPUT TYPE="RADIO" NAME="antwort30" VALUE="0"> Andr&eacute Bucher   <br>
+	<INPUT TYPE="RADIO" NAME="antwort30" VALUE="0"> Roger Schawinsky       <br>
+	<INPUT TYPE="RADIO" NAME="antwort30" VALUE="0"> Rudolph von Habsburg      <br>
+	<INPUT TYPE="RADIO" NAME="antwort30" VALUE="1"> Willhelm Tell        <br>
+	</B>
+	<input type="button" VALUE="next"
+		   onclick="evaluateQuestion();">
+</form>
+</div>
+<div id="question4" style="display: none" >
 
-<footer class="container-fluid text-center">
+	<h2> 4. Question </h2>
+	Switzerland has common borders with how many countries?   <br>
+	<form name="question4">
+		<INPUT TYPE="RADIO" NAME="antwort40" VALUE="0"> 3        <br>
+		<INPUT TYPE="RADIO" NAME="antwort40" VALUE="0"> 4   <br>
+		<INPUT TYPE="RADIO" NAME="antwort40" VALUE="1"> 5       <br>
+		<INPUT TYPE="RADIO" NAME="antwort40" VALUE="0"> 6      <br>
+		<INPUT TYPE="RADIO" NAME="antwort40" VALUE="0"> 7        <br>
+		</B>
+		<input type="button" VALUE="next"
+			   onclick="evaluateQuestion();">
+	</form>
+</div>
+<div id="question5" style="display: none" >
+
+	<h2> 5. Question </h2>
+	How large is Switzerland (in square kilometers)?   <br>
+	<form name="question5">
+		<INPUT TYPE="RADIO" NAME="antwort50" VALUE="0"> 34241 <br>
+		<INPUT TYPE="RADIO" NAME="antwort50" VALUE="0"> 38903 <br>
+		<INPUT TYPE="RADIO" NAME="antwort50" VALUE="0"> 39873 <br>
+		<INPUT TYPE="RADIO" NAME="antwort50" VALUE="0"> 39874 <br>
+		<INPUT TYPE="RADIO" NAME="antwort50" VALUE="1"> 41284 <br>
+		</B>
+		<input type="button" VALUE="next"
+			   onclick="evaluateQuestion();">
+	</form>
+</div>
+	<footer class="container-fluid text-center">
 	<p>Footer Text</p>
 </footer>
 
