@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body
+{
+    font-family: 'Lato', sans-serif;
+}
+
+h1, p {
+    text-align: center;
+}
+
+p {
+    font-style: italic;
+}
+
+/* le bouton en bas à droite */
+
+input[type=button] {
+    width: 80px;
+    height: 25px;
+    text-align: center;
+    float:right;
+    background-color: #fff;
+    margin: 0 2px 0 2px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+
+}
+
+
+#container
+{
+    width:50%;
+    margin: 150px auto;
+    padding: 50px 30px;
+    background-color: papayawhip;
+    border-radius:3px;
+    color: #000000;
+    box-shadow: 0 0 10px 0 #999;
+}
+
+form {
+    padding: 20px;
+}
+
+/* la liste */
+
+form ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 500px;
+}
+
+/* éléments de la liste */
+form ul li
+{
+    border-color: black;
+    border-width: thin;
+    border-style: dashed ;
+    border-radius: 5px;
+    background: #FFF6ED;
+    width: 250px;
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+
+}
+
+/* on ajoute la souris quand on passe sur un bouton */
+
+input[type="radio"]{
+    cursor: pointer;
+}
+
